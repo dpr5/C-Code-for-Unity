@@ -1,0 +1,48 @@
+using UnityEngine;
+using System.Collections;
+
+public class EnumCode: MonoBehaviour {
+
+
+	public enum ItemType
+	{
+		Potions,
+		Weapons,
+		Clothing,
+		Tradable
+	}
+
+	public ItemType currentItemType;
+
+    public enum EnemyState
+    {
+        Idle,
+        Searching,
+        Attacking,
+        Dead
+
+    }
+
+    public EnemyState currentEnemyState;
+
+	
+	
+	// Update is called once per frame
+	void Update () {
+	switch(currentEnemyState)
+        {
+            case EnemyState.Idle:
+                Debug.Log("Idle....");
+                break;
+            case EnemyState.Searching:
+                Debug.Log("Searching....");
+                break;
+            case EnemyState.Attacking:
+                Debug.Log("Attacking....");
+                    break;
+            case EnemyState.Dead:
+                Debug.Log("Dead!");
+                    break;
+        }
+	}
+}
