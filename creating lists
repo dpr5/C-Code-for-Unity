@@ -1,0 +1,26 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+public class ListExample : MonoBehaviour {
+
+    public List<int> ages = new List<int>();
+    public List<GameObject> inventory = new List<GameObject>();
+    public List<string> codeNames = new List<string>();
+
+
+    void update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ages.Add(Random.Range(1, 100));
+        
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ages.Remove(Random.Range(1, ages.Count));
+
+        }
+    }
+}
