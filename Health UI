@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UIScript : MonoBehaviour {
+
+
+    
+    private float fillAmount =1f ;
+    private float maxHealth = 1f;
+    private float minHealth = 0.0f;
+    [SerializeField]
+    private Image content;
+    public GameObject gameOver;
+
+
+
+	// Use this for initialization
+	void Start () {
+        gameOver.SetActive(false);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        healthBar();       
+	}
+
+    private void healthBar()
+    {
+        content.fillAmount = fillAmount;
+    }
+
+    public void buttonThingSub()
+    {
+        if (fillAmount != minHealth)
+        {
+            fillAmount = fillAmount - 0.10f;
+        }
+        else if(fillAmount == minHealth)
+        {
+            fillAmount = fillAmount - 0.0f;
+            gameOver.SetActive(true);
+        }
+    }
+
+    public void buttonThingAdd()
+    {
+        if (fillAmount != maxHealth)
+        {
+            fillAmount = fillAmount + 0.10f;
+        }
+        else if (fillAmount == maxHealth)
+        {
+            fillAmount = fillAmount + 0.0f;
+        }
+    }
+
+}
